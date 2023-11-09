@@ -6,22 +6,22 @@ ctx.strokeStyle = 'black';
 ctx.lineWidth = 2;
 ctx.beginPath();
 ctx.moveTo(110, 122);
-ctx.lineTo(110, 505);
+ctx.lineTo(110, 450);
 ctx.stroke();
 
 ctx.beginPath();
 ctx.moveTo(300, 122);
-ctx.lineTo(300, 261);
+ctx.lineTo(300, 231);
 ctx.stroke();
 
 ctx.beginPath();
 ctx.moveTo(500, 122);
-ctx.lineTo(500, 261);
+ctx.lineTo(500, 231);
 ctx.stroke();
 
 ctx.beginPath();
 ctx.moveTo(690, 122);
-ctx.lineTo(690, 505);
+ctx.lineTo(690, 450);
 ctx.stroke();
 
 ctx.strokeStyle = 'gray';
@@ -45,18 +45,18 @@ ctx.stroke();
 // Horizontal lines
 ctx.strokeStyle = 'black';
 ctx.beginPath();
-ctx.moveTo(110, 505);
-ctx.lineTo(395, 505);
+ctx.moveTo(110, 450);
+ctx.lineTo(395, 450);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(425, 505);
-ctx.lineTo(690, 505);
+ctx.moveTo(425, 450);
+ctx.lineTo(690, 450);
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(300, 261);
-ctx.lineTo(500, 261);
+ctx.moveTo(300, 231);
+ctx.lineTo(500, 231);
 ctx.stroke();
 
 ctx.beginPath();
@@ -91,44 +91,43 @@ ctx.stroke();
 ctx.lineWidth = 2;
 ctx.fillStyle = "white";
 ctx.beginPath();
-ctx.arc(400, 261, 20, 0, 2 * Math.PI);
+ctx.arc(400, 231, 20, 0, 2 * Math.PI);
 ctx.fill();
 ctx.stroke();
-
-//power supply
-
-ctx.beginPath();
-ctx.moveTo(395, 490);
-ctx.lineTo(395, 520);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(405, 480);
-ctx.lineTo(405, 530);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(415, 490);
-ctx.lineTo(415, 520);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(425, 480);
-ctx.lineTo(425, 530);
-ctx.stroke();
-
-
 
 // voltmetre symbol naming
 ctx.fillStyle = "black"
 ctx.font = "bold small-caps 20px Arial";
 ctx.textBaseline = "middle";
-ctx.fillText("V", 393, 263)
+ctx.fillText("V", 393, 233)
+
+//power supply
+
+ctx.beginPath();
+ctx.moveTo(395, 435);
+ctx.lineTo(395, 465);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(405, 425);
+ctx.lineTo(405, 475);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(415, 435);
+ctx.lineTo(415, 465);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(425, 425);
+ctx.lineTo(425, 475);
+ctx.stroke();
+
 
 //ammeter
 ctx.fillStyle = "white";
 ctx.beginPath();
-ctx.arc(689, 331, 20, 0, 2 * Math.PI);
+ctx.arc(689, 280, 20, 0, 2 * Math.PI);
 ctx.fill();
 ctx.stroke();
 
@@ -136,8 +135,53 @@ ctx.stroke();
 ctx.fillStyle = "black"
 ctx.font = "bold small-caps 20px Arial";
 ctx.textBaseline = "middle";
-ctx.fillText("A", 683, 331)
+ctx.fillText("A", 683, 281)
 
+//negative
+ctx.fillStyle = "black"
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("- ve", 343, 431)
+
+ctx.fillStyle = "black"
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("-", 346, 431)
+
+ctx.fillStyle = "black"
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("-", 360, 221)
+ctx.fillStyle = "black"
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("-", 356, 221)
+
+//positive
+
+ctx.fillStyle = "black"
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("+ ve", 443, 431)
+
+ctx.fillStyle = "black"
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("+ ", 430, 221)
+
+//voltmeter
+
+ctx.fillStyle = "black"
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("voltmeter", 350, 265)
+
+//ammeter
+
+ctx.fillStyle = "black"
+ctx.font = "bold small-caps 20px Arial";
+ctx.textBaseline = "middle";
+ctx.fillText("ammeter", 575, 280)
 
 //Initialise system parameters here
 function varinit() {
