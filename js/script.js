@@ -1,258 +1,154 @@
+var voltage = i1 = i2 = i3 = 0;
+
+var rowCount = 0;
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-
-//vertical line
-ctx.strokeStyle = 'black';
-ctx.lineWidth = 2;
-ctx.beginPath();
-ctx.moveTo(110, 122);
-ctx.lineTo(110, 505);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(300, 122);
-ctx.lineTo(300, 261);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(500, 122);
-ctx.lineTo(500, 261);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(690, 122);
-ctx.lineTo(690, 505);
-ctx.stroke();
-
-ctx.strokeStyle = 'gray';
-ctx.beginPath();
-ctx.moveTo(410, 109);
-ctx.lineTo(410, 135);
-ctx.stroke();
-
-
- // Draw the  arrow
- ctx.beginPath();
- ctx.fillStyle = "gray";
- ctx.moveTo(410, 122); 
- ctx.lineTo(390, 108); 
- ctx.lineTo(390, 138); 
- ctx.lineTo(410, 122); 
- ctx.fill();
- ctx.stroke();
- 
-
-// Horizontal lines
-ctx.strokeStyle = 'black';
-ctx.beginPath();
-ctx.moveTo(110, 505);
-ctx.lineTo(395, 505);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(425, 505);
-ctx.lineTo(690, 505);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(300, 261);
-ctx.lineTo(500, 261);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(110, 122);
-ctx.lineTo(370, 122);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(430, 122);
-ctx.lineTo(690, 122);
-ctx.stroke();
-
-// ctx.beginPath();
-// ctx.moveTo(300, 122);
-// ctx.lineTo(370, 122);
-// ctx.stroke();
-
-
-ctx.lineWidth = 1;
-ctx.beginPath();
-ctx.moveTo(370, 122);
-ctx.lineTo(389, 122);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(411, 122);
-ctx.lineTo(430, 122);
-ctx.stroke();
-
-//voltmeter
-
-ctx.lineWidth = 2;
-ctx.fillStyle = "white";
-ctx.beginPath();
-ctx.arc(400, 261, 20, 0, 2 * Math.PI);
-ctx.fill();
-ctx.stroke();
-
-//power supply
-
-ctx.beginPath();
-ctx.moveTo(395, 490);
-ctx.lineTo(395, 520);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(405, 480);
-ctx.lineTo(405, 530);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(415, 490);
-ctx.lineTo(415, 520);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(425, 480);
-ctx.lineTo(425, 530);
-ctx.stroke();
-
-
-
-// voltmetre symbol naming
-ctx.fillStyle = "black"
-ctx.font = "bold small-caps 20px Arial";
-ctx.textBaseline = "middle";
-ctx.fillText("V", 393, 263)
-
-//ammeter
-ctx.fillStyle = "white";
-ctx.beginPath();
-ctx.arc(689, 331, 20, 0, 2 * Math.PI);
-ctx.fill();
-ctx.stroke();
-
-// ammetre symbol naming
-ctx.fillStyle = "black"
-ctx.font = "bold small-caps 20px Arial";
-ctx.textBaseline = "middle";
-ctx.fillText("A", 683, 331)
 
 
 //Initialise system parameters here
 function varinit() {
   varchange();
   //Variable slider and number input types
-  $("#voltageSlider").slider("value", 0.05); // slider initialisation : jQuery widget
-  $("#voltageSpinner").spinner("value", 0.05); // number initialisation : jQuery widge
-  $("#CsArea").spinner("value", 0.01);
-  $("#Ivalue").spinner("value", 0.01);
-
-  $('#voltageSlider').slider("disable"); 
-  $('#voltageSpinner').spinner("disable");
+  $("#distance1Slider").slider("value", 0.05); // slider initialisation : jQuery widget
+  $("#distance1Spinner").spinner("value", 0.05); // number initialisation : jQuery widget
+  //resistor 1
+  $("#distance2Slider").slider("value", 0.01);
+  $("#distance2Spinner").spinner("value", 0.01);
+  //resistor 2
+  $("#distance3Slider").slider("value", 0.01);
+  $("#distance3Spinner").spinner("value", 0.01);
+  //resistor 3
+  $("#distance4Slider").slider("value", 0.01);
+  $("#distance4Spinner").spinner("value", 0.01);
 }
 
 function varchange() {
-  $("#voltageSlider").slider({ max: 300, min: 0, step: 10 });
-  $("#voltageSpinner").spinner({ max: 300, min: 0, step: 10 });
+  $("#distance1Slider").slider({ max: 300, min: 0, step: 10 });
+  $("#distance1Spinner").spinner({ max: 300, min: 0, step: 10 });
 
-  $("#voltageSlider").on("slide", function (e, ui) {
-    $("#voltageSpinner").spinner("value", ui.value);
+  $("#distance1Slider").on("slide", function (e, ui) {
+    $("#distance1Spinner").spinner("value", ui.value);
     time = 0;
     varupdate();
   });
-  $("#voltageSpinner").on("spin", function (e, ui) {
-    $("#voltageSlider").slider("value", ui.value);
+  $("#distance1Spinner").on("spin", function (e, ui) {
+    $("#distance1Slider").slider("value", ui.value);
     time = 0;
     varupdate();
   });
-  $("#voltageSpinner").on("change", function () {
+  $("#distance1Spinner").on("change", function () {
     varchange();
   });
 
-  $("#resistorSlider").slider({ max: 200, min: 0, step: 1 });
-  $("#resistorSpinner").spinner({ max: 200, min: 0, step: 1 });
+  // resistor 1
 
-  $("#resistorSlider").on("slide", function (e, ui) {
+  $("#distance2Slider").slider({ max: 200, min: 0, step: 1 });
+  $("#distance2Spinner").spinner({ max: 200, min: 0, step: 1 });
+
+  $("#distance2Slider").on("slide", function (e, ui) {
+    $("#distance2Spinner").spinner("value", ui.value);
+    time = 0;
+    varupdate();
+  });
+  $("#distance2Spinner").on("spin", function (e, ui) {
+    $("#distance2Slider").slider("value", ui.value);
+    time = 0;
+    varupdate();
+  });
+  $("#distance2Spinner").on("change", function () {
+    varchange();
+  });
+  $("#distance2Spinner").on("touch-start", function () {
+    varchange();
+  });
+
+  // resistor 2
+  $("#distance3Slider").slider({ max: 200, min: 0, step: 1 });
+  $("#distance3Spinner").spinner({ max: 200, min: 0, step: 1 });
+
+  $("#distance3Slider").on("slide", function (e, ui) {
+    $("#distance2Spinner").spinner("value", ui.value);
+    time = 0;
+    varupdate();
+  });
+  $("#distance3Spinner").on("spin", function (e, ui) {
+    $("#distance3Slider").slider("value", ui.value);
+    time = 0;
+    varupdate();
+  });
+  $("#distance3Spinner").on("change", function () {
+    varchange();
+  });
+  $("#distance3Spinner").on("touch-start", function () {
+    varchange();
+  });
+
+  // resistor 3
+  $("#distance4Slider").slider({ max: 200, min: 0, step: 1 });
+  $("#distance4Spinner").spinner({ max: 200, min: 0, step: 1 });
+
+  $("#distance4Slider").on("slide", function (e, ui) {
     $("#resistorSpinner").spinner("value", ui.value);
     time = 0;
     varupdate();
   });
-  $("#resistorSpinner").on("spin", function (e, ui) {
-    $("#resistorSlider").slider("value", ui.value);
+  $("#distance4Spinner").on("spin", function (e, ui) {
+    $("#distance4Slider").slider("value", ui.value);
     time = 0;
     varupdate();
   });
-  $("#resistorSpinner").on("change", function () {
+  $("#distance4Spinner").on("change", function () {
     varchange();
   });
-  $("#resistorSpinner").on("touch-start", function () {
+  $("#distance4Spinner").on("touch-start", function () {
     varchange();
   });
+  //
+  $("#CsArea").spinner({ max: 1, min: 0.01, step: 0.0001 });
+  $("#Ivalue").spinner({ max: 1, min: 0.01, step: 0.0001 });
 }
-
 function varupdate() {
-  $("#voltageSpinner").spinner("value", $("#voltageSlider").slider("value")); //updating slider location with change in spinner(debug)
-  volt = $("#voltageSpinner").spinner("value"); //Updating variables
- };
+  $("#distance1Spinner").spinner("value", $("#distance1Slider").slider("value")); //updating slider location with change in spinner(debug)
+  $("#distance2Spinner").spinner("value", $("#distance2Slider").slider("value"));
+  $("#distance3Spinner").spinner("value", $("#distance3Slider").slider("value"));
+  $("#distance4Spinner").spinner("value", $("#distance4Slider").slider("value"));
+  volt = $("#distance1Spinner").spinner("value"); //Updating variables
+  res1 = $("#distance2Spinner").spinner("value");
+  res2 = $("#distance3Spinner").spinner("value");
+  res3 = $("#distance4Spinner").spinner("value");
+};
 
- function checkConnection() {
-  // console.log("working check");
-  if(red && black){
-    // console.log("working red black");
-    alert('Circuit connection is correct ')
-    $('#voltageSlider').slider("disable"); 
-    $('#voltageSpinner').spinner("disable");
-    $('#resistorSlider').slider("disable"); 
-    $('#resistorSpinner').spinner("disable"); 
-    $('#thresholdSlider').slider("enable"); 
-    $('#thresholdSpinner').spinner("enable"); 
-    $("#check-btn").prop("disabled", true);
-    $("#message").text("Set the threshold current and click on simulate button");
-    $("#threshold-btn, #simulate-btn").prop("disabled", false);
-    varupdate();
-  }
-  else{
-    if(red == 0 ){
-      if(black == 0){
-        alert('complete the circuit connection')
-        return;
-      }else{
-        alert('connect live wire')
-        console.log("live wire");
-      }
-    }
-    if(black == 0){
-        alert("connect neutral wire")
-        console.log("neutral wire");
-      }
-    }   
-  }
+function addtable(){
 
+  var table=document.getElementById("mytable");
+  var row=table.insertRow(-1);
+  var cell1=row.insertCell(0);
+  var cell2=row.insertCell(1);
+  var cell3=row.insertCell(2);
+  var cell4=row.insertCell(3);
+  var cell5=row.insertCell(4);
+  var cell6=row.insertCell(5);
 
-function setThreshold() {
-  if(simStat = 1)  {
-    // console.log("working");
-    $('#voltageSlider').slider("disable"); 
-    $('#voltageSpinner').spinner("disable");
-    $('#resistorSlider').slider("disable"); 
-    $('#resistorSpinner').spinner("disable"); 
-    $('#thresholdSlider').slider("enable"); 
-    $('#thresholdSpinner').spinner("enable"); 
-    $("#message").text("Set the threshold current and click on simulate button");
-    }
-  }
-
-function parametreSliderEnable() {
-    console.log("working");
-    $('#voltageSlider').slider("enable"); 
-    $('#voltageSpinner').spinner("enable");
-    $('#resistorSlider').slider("enable"); 
-    $('#resistorSpinner').spinner("enable"); 
-    $('#thresholdSlider').slider("disable"); 
-    $('#thresholdSpinner').spinner("disable"); 
-    $("#message").text("Vary the parameters and see the Result");
+  cell1.innerHTML=voltage;
+  cell2.innerHTML= i1;
+  cell3.innerHTML= i2;
+  cell4.innerHTML= i3;
+  cell5.innerHTML= i1;
+  cell6.innerHTML = 0
+  cell5.classList.add("column-font");
+  cell6.classList.add("column-font");
 }
 
+function showvalue(){
+  var hiddenCells = document.querySelectorAll(".column-font");
+  hiddenCells.forEach(function(cell) {
+    cell.style.display = 'table-cell';
+  });
+}
+
+function showResult() {
+  document.getElementById('p3').style.display = 'block'   
+}
 
 window.addEventListener("load", varinit);

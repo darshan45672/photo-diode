@@ -42,10 +42,10 @@
       <div class="title-div">
 
         <div class="logo-div">
-          <a href="https://github.com/darshan45672"><img src="images/nitk.svg" alt="Logo" class="logo" /></a>
+          <a href="#"><img src="images/nitk.svg" alt="Logo" class="logo" /></a>
         </div>
 
-        <h1>Kirchoff's Current law</h1>
+        <h1>Working of Photo Diode</h1>
       </div>
     </div>
 
@@ -95,9 +95,24 @@
               <h3 class="task-title">Variables</h3>
                 <div class="variables-sections">
                   <div class="var-div">
-                    <label for="voltageSpinner">DC Voltage (V)</label>
-                    <input class="var-spinner" id="voltageSpinner" name="value" />
-                    <div class="var-slider" id="voltageSlider"></div>
+                    <label for="distance1Spinner">Distance 1 (D1)</label>
+                    <input class="var-spinner" id="distance1Spinner" name="value" />
+                    <div class="var-slider" id="distance1Slider"></div>
+                  </div>
+                  <div class="var-div">
+                    <label for="distance2Spinner">Distance 2 (D2)</label>
+                    <input class="var-spinner" id="distance2Spinner" name="value" />
+                    <div class="var-slider" id="distance2Slider"></div>
+                  </div>
+                  <div class="var-div">
+                    <label for="distance3Spinner">Distance 3 (D3)</label>
+                    <input class="var-spinner" id="distance3Spinner" name="value" />
+                    <div class="var-slider" id="distance3Slider"></div>
+                  </div>
+                  <div class="var-div">
+                    <label for="distance4Spinner">Distance 4 (D4)</label>
+                    <input class="var-spinner" id="distance4Spinner" name="value" />
+                    <div class="var-slider" id="distance4Slider"></div>
                   </div>
               </div>
             </div>
@@ -108,52 +123,40 @@
                 <div class="control-sections">
                   <button id="simulate-btn" class="button" style="cursor: pointer;" onclick="startSimulation();">Start Simulation</button> 
                   <button id="add-to-table-btn" class="button" style="cursor: pointer;" onclick="addtable();">Add to Table</button>
-                  <!-- <button id="add-I1I2-btn" class="button" style="cursor: pointer;" onclick="showvalue()">Add I2+I3</button> -->
+                  <button id="add-I1I2-btn" class="button" style="cursor: pointer;" onclick="showvalue()">Add I2+I3</button>
                   <button id="result-btn" class="button" style="cursor: pointer;" onclick="showResult()">Result</button>
                   <p id="message" style="text-align: center; margin-top: 20px;"></p>
                 </div>
               </div>
           </div>
-
           <div id="comments" class="main__task-div">
             <h3 class="task-title" style="text-align: center;">Tabulation</h3>
               <div class="settings-sections">
                 <div class="control-sections">
                     <table id="mytable">
                       <tr>
-                        <th>DC Voltage</th>
-                        <th>Current I1</th>
-                        <th>Current I2</th>
-                        <th>Current I3</th>
-                        <th>Current I1 = I2 + I3</th>
+                        <th>Voltage</th>
+                        <th>Dark Current</th>
+                        <th>Current (I <sub>D1</sub>)</th>
+                        <th>Current (I <sub>D2</sub>)</th>
+                        <th>Current (I <sub>D3</sub>)</th>
+                        <th>Current (I <sub>D4</sub>)</th>
                       </tr>
                     </table>
                 </div>
               </div>
           </div>
-          <!-- <div id="calculation-display-div" class="main__task-div">
+          <div id="comments" class="main__task-div">
             <h3 class="task-title">Calcualtions</h3>
               <div class="settings-sections">
-                <div class="control-sections">
-                  <p id="p1">I1 = I2 + I3</p>
-                  <!-- <p id="p2">I2 = <span id="i2"></span> mA</p>
-                  <p id="p2">I3  = <span id="i3"></span> mA</p> -->
-                    <!-- <table id="mytable">
-                      <tr>
-                        <th>DC Voltage</th>
-                        <th>Current I1</th>
-                        <th>Current I2</th>
-                        <th>Current I3 = I1 + I2</th>
-                      </tr>
-                    </table> -
-                </div>
+                <div class="control-sections"> </div>
               </div>
-          </div> -->
-          <div id="result-display-div" class="main__task-div">
+          </div>
+          <div id="comments" class="main__task-div">
             <h3 class="task-title">Result</h3>
               <div class="settings-sections">
                 <div class="control-sections">
-                  <p id="p3">Since I1 = I2 + I3<br>Kirchoff's Current Law is verified</p>
+                  <p id="p3">I-V characteristics of Photo Diode is observed<br>relation between Intensity and Photo current is observed</p>
                 </div>
               </div>
           </div>          
