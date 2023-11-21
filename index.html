@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Solve NITK</title>
+    <title>Solve NITK KCL</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,10 +42,10 @@
       <div class="title-div">
 
         <div class="logo-div">
-          <a href="https://github.com/darshan45672"><img src="images/nitk.svg" alt="Logo" class="logo" /></a>
+          <a href="#"><img src="images/nitk.svg" alt="Logo" class="logo" /></a>
         </div>
 
-        <h1>Battery and Fuse</h1>
+        <h1>Working of Photo Diode</h1>
       </div>
     </div>
 
@@ -95,20 +95,25 @@
               <h3 class="task-title">Variables</h3>
                 <div class="variables-sections">
                   <div class="var-div">
-                    <label for="resistorSpinner">Resistor (ohms):</label>
-                    <input class="var-spinner" id="resistorSpinner" name="value" />
-                    <div class="var-slider" id="resistorSlider"></div>
+                    <label for="distance1Spinner">Distance 1 (D1)</label>
+                    <input class="var-spinner" id="distance1Spinner" name="value" />
+                    <div class="var-slider" id="distance1Slider"></div>
                   </div>
-                <div class="var-div">
-                  <label for="voltageSpinner">Voltage (V)</label>
-                  <input class="var-spinner" id="voltageSpinner" name="value" />
-                  <div class="var-slider" id="voltageSlider"></div>
-                </div>
-                <div class="var-div">
-                  <label for="thresholdSpinner">Threshold Current (mA)</label>
-                  <input class="var-spinner" id="thresholdSpinner" name="value" />
-                  <div class="var-slider" id="thresholdSlider"></div>
-                </div>
+                  <div class="var-div">
+                    <label for="distance2Spinner">Distance 2 (D2)</label>
+                    <input class="var-spinner" id="distance2Spinner" name="value" />
+                    <div class="var-slider" id="distance2Slider"></div>
+                  </div>
+                  <div class="var-div">
+                    <label for="distance3Spinner">Distance 3 (D3)</label>
+                    <input class="var-spinner" id="distance3Spinner" name="value" />
+                    <div class="var-slider" id="distance3Slider"></div>
+                  </div>
+                  <div class="var-div">
+                    <label for="distance4Spinner">Distance 4 (D4)</label>
+                    <input class="var-spinner" id="distance4Spinner" name="value" />
+                    <div class="var-slider" id="distance4Slider"></div>
+                  </div>
               </div>
             </div>
           </div>
@@ -116,26 +121,44 @@
             <h3 class="task-title">Controls</h3>
               <div class="settings-sections">
                 <div class="control-sections">
-                  <button id="check-btn" class="button" style="cursor: pointer;" onclick="checkConnection()">Check</button> 
-                  <button id="simulate-btn" class="button" style="cursor: pointer;" onclick=" setThreshold()">Set Threshold Current</button>
-                  <button id="threshold-btn" class="button" style="cursor: pointer;" onclick=" parametreSliderEnable()">Simulate</button>
+                  <button id="simulate-btn" class="button" style="cursor: pointer;" onclick="startSimulation();">Start Simulation</button> 
+                  <button id="add-to-table-btn" class="button" style="cursor: pointer;" onclick="addtable();">Add to Table</button>
+                  <button id="add-I1I2-btn" class="button" style="cursor: pointer;" onclick="showvalue()">Add I2+I3</button>
+                  <button id="result-btn" class="button" style="cursor: pointer;" onclick="showResult()">Result</button>
                   <p id="message" style="text-align: center; margin-top: 20px;"></p>
                 </div>
               </div>
           </div>
-
           <div id="comments" class="main__task-div">
-            <h3 class="task-title">Results</h3>
+            <h3 class="task-title" style="text-align: center;">Tabulation</h3>
               <div class="settings-sections">
                 <div class="control-sections">
-                  <p id="p1">Resistance (R) = <span id="resistance"></span> Ω</p>
-                  <p id="p2">Voltage (V<sub>s</sub>) = <span id="voltage"></span> V</p>
-                  <p id="p2">Threshold Current (I<sub>th</sub>) = <span id="threshold"></span> mA</p>
-                  <p id="p2">Current (I<sub>a</sub>) = <span id="current"></span> mA</p>
-                  <p id="p3"><sapn id="resultMessage"></span></p>
+                    <table id="mytable">
+                      <tr>
+                        <th>Voltage</th>
+                        <th>Current (I <sub>D1</sub>)</th>
+                        <th>Current (I <sub>D2</sub>)</th>
+                        <th>Current (I <sub>D3</sub>)</th>
+                        <th>Current (I <sub>D4</sub>)</th>
+                      </tr>
+                    </table>
                 </div>
               </div>
           </div>
+          <div id="comments" class="main__task-div">
+            <h3 class="task-title">Calcualtions</h3>
+              <div class="settings-sections">
+                <div class="control-sections"> </div>
+              </div>
+          </div>
+          <div id="comments" class="main__task-div">
+            <h3 class="task-title">Result</h3>
+              <div class="settings-sections">
+                <div class="control-sections">
+                  <p id="p3">I-V characteristics of Photo Diode is observed<br>relation between Intensity and Photo current is observed</p>
+                </div>
+              </div>
+          </div>          
           <div class="main__task-div footer">
             <p>Copyright © SOLVE The Virtual Lab @ NITK Surathkal</p>
           </div>
