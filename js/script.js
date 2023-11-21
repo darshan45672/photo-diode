@@ -128,14 +128,12 @@ function addtable(){
   var cell3=row.insertCell(2);
   var cell4=row.insertCell(3);
   var cell5=row.insertCell(4);
-  var cell6=row.insertCell(5);
-
+  
   cell1.innerHTML=voltage;
   cell2.innerHTML= i1;
   cell3.innerHTML= i2;
   cell4.innerHTML= i3;
   cell5.innerHTML= i1;
-  cell6.innerHTML = 0
   cell5.classList.add("column-font");
   cell6.classList.add("column-font");
 }
