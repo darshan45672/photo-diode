@@ -87,7 +87,7 @@
             </div>
             <div class="canvas__div">
               <!-- <div id="canvas-container"> -->
-                <canvas id="canvas" width="820" height="500" style="border: 1px solid #fff; border-radius: 7px;"></canvas>
+              <canvas id="canvas" width="820" height="500" style="border: 1px solid #fff; border-radius: 7px;"></canvas>
             </div>
           </div>
           <div id="variables" class="main__task-div">
@@ -122,8 +122,8 @@
               <div class="settings-sections">
                 <div class="control-sections">
                   <button id="simulate-btn" class="button" style="cursor: pointer;" onclick="startSimulation();">Start Simulation</button> 
-                  <button id="add-to-table-btn" class="button" style="cursor: pointer;" onclick="addtable();">Add to Table</button>
-                  <button id="add-I1I2-btn" class="button" style="cursor: pointer;" onclick="showvalue()">Add I2+I3</button>
+                  <button id="take-readings" class="button" style="cursor: pointer;" onclick="takeReadings();">Take Readings</button>
+                  <button id="plot-graph-btn" class="button" style="cursor: pointer;" onclick="plotGraph()">Plot Graph</button>
                   <button id="result-btn" class="button" style="cursor: pointer;" onclick="showResult()">Result</button>
                   <p id="message" style="text-align: center; margin-top: 20px;"></p>
                 </div>
@@ -194,6 +194,14 @@
                 </div>
               </div>
           </div>
+          <div id="result-display-div" class="main__task-div">
+            <h3 class="task-title">Graph</h3>
+              <div class="settings-sections">
+                <div class="control-sections">
+                  <!-- <p id="p3">Since I1 = I2 + I3<br>Kirchoff's Current Law is verified</p> -->
+                </div>
+              </div>
+          </div>  
           <div id="comments" class="main__task-div">
             <h3 class="task-title">Calcualtions</h3>
               <div class="settings-sections">
