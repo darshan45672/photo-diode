@@ -42,7 +42,7 @@
       <div class="title-div">
 
         <div class="logo-div">
-          <a href="https://github.com/darshan45672"><img src="images/nitk.svg" alt="Logo" class="logo" /></a>
+          <a href="#"><img src="images/nitk.svg" alt="Logo" class="logo" /></a>
         </div>
 
         <h1>Kirchoff's Current law</h1>
@@ -87,18 +87,43 @@
             </div>
             <div class="canvas__div">
               <!-- <div id="canvas-container"> -->
-                <canvas id="canvas" width="820" height="500" style="border: 1px solid #fff; border-radius: 7px;"></canvas>
+                <canvas id="canvas" width="820" height="500" 
+                style="border: 1px solid #fff; border-radius: 7px;"></canvas>
+                <!-- <canvas id="canvas1" width="550" height="300"></canvas> -->
             </div>
           </div>
           <div id="variables" class="main__task-div">
             <div class="settings-sections">
               <h3 class="task-title">Variables</h3>
                 <div class="variables-sections">
+                  <!-- <div class="var-div">
+                    <label for="distanceInput">Select Distance:</label>
+                        <input  id="distanceInput" min="0" max="400" value="0" step="1">
+                        <input  id="distanceSpinner" min="0" max="400" value="0" step="1">
+                        <span id="distanceValue">0</span> pixels
+                  </div> -->
                   <div class="var-div">
-                    <label for="voltageSpinner">DC Voltage (V)</label>
-                    <input class="var-spinner" id="voltageSpinner" name="value" />
-                    <div class="var-slider" id="voltageSlider"></div>
+                    <label for="distanceSpinner">Distance (D1) </label>
+                    <input class="var-spinner" id="distanceSpinner" name="value" />
+                    <div class="var-slider" id="distanceSlider"></div>
                   </div>
+                  <div class="var-div">
+                    <label for="dampSpinner">Distance (D2)</label>
+                    <input class="var-spinner" id="dampSpinner" name="value" />
+                    <div class="var-slider" id="dampSlider"></div>
+                  </div>
+                  <div class="var-div">
+                    <label for="massSpinner">Distance (D3)</label>
+                    <input class="var-spinner" id="massSpinner" name="value" />
+                    <div class="var-slider" id="massSlider"></div>
+                  </div>
+                  <div class="var-div">
+                    <label for="distanceSpinner">Distance (D4)</label>
+                    <input class="var-spinner" id="distanceSpinner" name="value" />
+                    <div class="var-slider" id="distanceSlider"></div>
+                  </div>
+
+
               </div>
             </div>
           </div>
