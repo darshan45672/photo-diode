@@ -546,7 +546,7 @@ function takeReadings(){
         var table = document.getElementById("r2c2");
         IDark = iSat * (Math.exp(e * 0 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis1**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(0)
       }
         break;
@@ -554,7 +554,7 @@ function takeReadings(){
         var table = document.getElementById("r3c2");
         IDark = iSat * (Math.exp(e * 5 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis1**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(5)
       }
         break;
@@ -562,7 +562,7 @@ function takeReadings(){
           var table = document.getElementById("r4c2");
           IDark = iSat * (Math.exp(e * 10 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis1**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
           voltageDisplay(10)
       }
           break;
@@ -570,14 +570,14 @@ function takeReadings(){
           var table = document.getElementById("r5c2");
           IDark = iSat * (Math.exp(e * 15 / (k * T)) - 1);
           IPhoto = 0.5*(160/(dis1**2))
-          table.innerHTML = IDark + IPhoto;
+          table.innerHTML = (IDark + IPhoto).toFixed(2);
       }
           break;
       case 5:{
               var table = document.getElementById("r6c2");
               IDark = iSat * (Math.exp(e * 20 / (k * T)) - 1);
               IPhoto = 0.5*(160/(dis1**2))
-              table.innerHTML = IDark + IPhoto;
+              table.innerHTML = (IDark + IPhoto).toFixed(2);
               voltageDisplay(20)
       }
           break;
@@ -585,7 +585,7 @@ function takeReadings(){
             var table = document.getElementById("r7c2");
             IDark = iSat * (Math.exp(e * 25 / (k * T)) - 1);
             IPhoto = 0.5*(160/(dis1**2))
-            table.innerHTML = IDark + IPhoto;
+            table.innerHTML = (IDark + IPhoto).toFixed(2);
             voltageDisplay(25)
       }
         break;
@@ -593,7 +593,7 @@ function takeReadings(){
           var table = document.getElementById("r8c2");
           IDark = iSat * (Math.exp(e * 30 / (k * T)) - 1);
           IPhoto = 0.5*(160/(dis1**2))
-          table.innerHTML = IDark + IPhoto;
+          table.innerHTML = (IDark + IPhoto).toFixed(2);
           voltageDisplay(30)
       }
         break;
@@ -614,7 +614,7 @@ function takeReadings(){
         var table = document.getElementById("r2c3");
         IDark = iSat * (Math.exp(e * 0 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis2**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(0)
       }
       break;
@@ -622,7 +622,7 @@ function takeReadings(){
         var table = document.getElementById("r3c3");
         IDark = iSat * (Math.exp(e * 5 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis2**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(5)
       }
       break;
@@ -630,7 +630,7 @@ function takeReadings(){
         var table = document.getElementById("r4c3");
         IDark = iSat * (Math.exp(e * 10 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis2**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(10)
       }
       break;
@@ -638,7 +638,7 @@ function takeReadings(){
         var table = document.getElementById("r5c3");
         IDark = iSat * (Math.exp(e * 15 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis2**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(15)
       }
       break;
@@ -646,7 +646,7 @@ function takeReadings(){
         var table = document.getElementById("r6c3");
         IDark = iSat * (Math.exp(e * 20 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis2**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(20)
       }
       break;
@@ -654,7 +654,7 @@ function takeReadings(){
         var table = document.getElementById("r7c3");
         IDark = iSat * (Math.exp(e * 25 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis2**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(25)
       }
       break;
@@ -662,7 +662,7 @@ function takeReadings(){
         var table = document.getElementById("r8c3");
         IDark = iSat * (Math.exp(e * 30 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis2**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(30)
       }
       break;
@@ -684,7 +684,7 @@ function takeReadings(){
         var table = document.getElementById("r2c4");
         IDark = iSat * (Math.exp(e * 0 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis3**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(0)
       }
       break;
@@ -692,7 +692,7 @@ function takeReadings(){
         var table = document.getElementById("r3c4");
         IDark = iSat * (Math.exp(e * 5 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis3**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(5)
       }
       break;
@@ -700,7 +700,7 @@ function takeReadings(){
         var table = document.getElementById("r4c4");
         IDark = iSat * (Math.exp(e * 10 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis3**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(10)
       }
       break;
@@ -708,7 +708,7 @@ function takeReadings(){
         var table = document.getElementById("r5c4");
         IDark = iSat * (Math.exp(e * 15 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis3**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(15)
       }
       break;
@@ -716,7 +716,7 @@ function takeReadings(){
         var table = document.getElementById("r6c4");
         IDark = iSat * (Math.exp(e * 20 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis3**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(20)
       }
       break;
@@ -724,7 +724,7 @@ function takeReadings(){
         var table = document.getElementById("r7c4");
         IDark = iSat * (Math.exp(e * 25 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis3**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(25)
       }
       break;
@@ -732,7 +732,7 @@ function takeReadings(){
         var table = document.getElementById("r8c4");
         IDark = iSat * (Math.exp(e * 30 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis3**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(30)
       }
       break;
@@ -757,7 +757,7 @@ function takeReadings(){
         var table = document.getElementById("r2c5");
         IDark = iSat * (Math.exp(e * 0 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis4**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(0)
       }
       break;
@@ -765,7 +765,7 @@ function takeReadings(){
         var table = document.getElementById("r3c5");
         IDark = iSat * (Math.exp(e * 5 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis4**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(5)
       }
       break;
@@ -773,7 +773,7 @@ function takeReadings(){
         var table = document.getElementById("r4c5");
         IDark = iSat * (Math.exp(e * 10 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis4**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(10)
       }
       break;
@@ -781,7 +781,7 @@ function takeReadings(){
         var table = document.getElementById("r5c5");
         IDark = iSat * (Math.exp(e * 15 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis4**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(15)
       }
       break;
@@ -789,7 +789,7 @@ function takeReadings(){
         var table = document.getElementById("r6c5");
         IDark = iSat * (Math.exp(e * 20 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis4**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(20)
       }
       break;
@@ -797,7 +797,7 @@ function takeReadings(){
         var table = document.getElementById("r7c5");
         IDark = iSat * (Math.exp(e * 25 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis4**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(25)
       }
       break;
@@ -805,7 +805,7 @@ function takeReadings(){
         var table = document.getElementById("r8c5");
         IDark = iSat * (Math.exp(e * 30 / (k * T)) - 1);
         IPhoto = 0.5*(160/(dis4**2))
-        table.innerHTML = IDark + IPhoto;
+        table.innerHTML = (IDark + IPhoto).toFixed(2);
         voltageDisplay(30)
       }
       break;
