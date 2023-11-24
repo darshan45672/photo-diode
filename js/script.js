@@ -4,7 +4,7 @@ var rowCount = 0;
 var Itotal = 0
 var IDark = 0
 var IPhoto = 0 ;
-
+var temp = 0;
 var CurD1 = [];
 var CurD2 = [];
 var CurD3 = [];
@@ -587,6 +587,7 @@ function takeReadings(){
           IDark = checkIDis0(IDark);
           IPhoto = 0.5*(160/(dis1**2))
           table.innerHTML = (IDark + IPhoto).toFixed(2);
+          temp = (IDark + IPhoto).toFixed(2)
           currentDisplay((IDark + IPhoto).toFixed(2));
           voltageDisplay(15)
           CurD1.push((IDark + IPhoto).toFixed(2))
@@ -598,10 +599,12 @@ function takeReadings(){
               IDark = parseInt(IDark);
               IDark = checkIDis0(IDark);
               IPhoto = 0.5*(160/(dis1**2))
-              table.innerHTML = (IDark + IPhoto).toFixed(2);
-              currentDisplay((IDark + IPhoto).toFixed(2));
+              table.innerHTML = parseFloat(temp) + 0.02;
+              temp = parseFloat(temp) + 0.02
+              console.log(temp);
+              currentDisplay(temp);
               voltageDisplay(20)
-              CurD1.push((IDark + IPhoto).toFixed(2))
+              CurD1.push(temp)
       }
           break;
       case 6:{
@@ -610,10 +613,10 @@ function takeReadings(){
             IDark = parseInt(IDark);
             IDark = checkIDis0(IDark);
             IPhoto = 0.5*(160/(dis1**2))
-            table.innerHTML = (IDark + IPhoto).toFixed(2);
-            currentDisplay((IDark + IPhoto).toFixed(2));
+            table.innerHTML = temp;
+            currentDisplay(temp);
             voltageDisplay(25)
-            CurD1.push((IDark + IPhoto).toFixed(2))
+            CurD1.push(temp)
       }
         break;
       case 7:{
@@ -622,10 +625,10 @@ function takeReadings(){
           IDark = parseInt(IDark);
           IDark = checkIDis0(IDark);
           IPhoto = 0.5*(160/(dis1**2))
-          table.innerHTML = (IDark + IPhoto).toFixed(2);
-          currentDisplay((IDark + IPhoto).toFixed(2));
+          table.innerHTML = temp;
+          currentDisplay(temp);
           voltageDisplay(30)
-          CurD1.push((IDark + IPhoto).toFixed(2))
+          CurD1.push(temp)
       }
         break;
     }
@@ -685,6 +688,7 @@ function takeReadings(){
         IDark = checkIDis0(IDark);
         IPhoto = 0.5*(160/(dis2**2))
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        temp = (IDark + IPhoto).toFixed(2)
         currentDisplay((IDark + IPhoto).toFixed(2));
         CurD2.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(15)
@@ -696,9 +700,10 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         IPhoto = 0.5*(160/(dis2**2))
-        table.innerHTML = (IDark + IPhoto).toFixed(2);
-        currentDisplay((IDark + IPhoto).toFixed(2));
-        CurD2.push((IDark + IPhoto).toFixed(2))
+        table.innerHTML = parseFloat(temp) + 0.02;
+        temp = parseFloat(temp) + 0.02
+        currentDisplay(temp);
+        CurD2.push(temp)
         voltageDisplay(20)
       }
       break;
@@ -708,9 +713,9 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         IPhoto = 0.5*(160/(dis2**2))
-        table.innerHTML = (IDark + IPhoto).toFixed(2);
-        currentDisplay((IDark + IPhoto).toFixed(2));
-        CurD2.push((IDark + IPhoto).toFixed(2))
+        table.innerHTML = temp;
+        currentDisplay(temp);
+        CurD2.push(temp)
         voltageDisplay(25)
       }
       break;
@@ -720,9 +725,9 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         IPhoto = 0.5*(160/(dis2**2))
-        table.innerHTML = (IDark + IPhoto).toFixed(2);
-        currentDisplay((IDark + IPhoto).toFixed(2));
-        CurD2.push((IDark + IPhoto).toFixed(2))
+        table.innerHTML = temp;
+        currentDisplay(temp);
+        CurD2.push(temp)
         voltageDisplay(30)
       }
       break;
@@ -784,6 +789,7 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        temp = (IDark + IPhoto).toFixed(2)
         currentDisplay((IDark + IPhoto).toFixed(2));
         CurD3.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(15)
@@ -795,9 +801,10 @@ function takeReadings(){
         IPhoto = 0.5*(160/(dis3**2))
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
-        table.innerHTML = (IDark + IPhoto).toFixed(2);
-        currentDisplay((IDark + IPhoto).toFixed(2));
-        CurD3.push((IDark + IPhoto).toFixed(2))
+        temp = parseFloat(temp) + 0.02
+        table.innerHTML = temp
+        currentDisplay(temp);
+        CurD3.push(temp)
         voltageDisplay(20)
       }
       break;
@@ -807,9 +814,9 @@ function takeReadings(){
         IPhoto = 0.5*(160/(dis3**2))
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
-        table.innerHTML = (IDark + IPhoto).toFixed(2);
-        currentDisplay((IDark + IPhoto).toFixed(2));
-        CurD3.push((IDark + IPhoto).toFixed(2))
+        table.innerHTML = temp
+        currentDisplay(temp);
+        CurD3.push(temp)
         voltageDisplay(25)
       }
       break;
@@ -819,9 +826,9 @@ function takeReadings(){
         IPhoto = 0.5*(160/(dis3**2))
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
-        table.innerHTML = (IDark + IPhoto).toFixed(2);
-        currentDisplay((IDark + IPhoto).toFixed(2));
-        CurD3.push((IDark + IPhoto).toFixed(2))
+        table.innerHTML = temp
+        currentDisplay(temp);
+        CurD3.push(temp)
         voltageDisplay(30)
       }
       break;
@@ -886,6 +893,7 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        temp = (IDark + IPhoto).toFixed(2)
         currentDisplay((IDark + IPhoto).toFixed(2));
         CurD4.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(15)
@@ -897,9 +905,10 @@ function takeReadings(){
         IPhoto = 0.5*(160/(dis4**2))
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
-        table.innerHTML = (IDark + IPhoto).toFixed(2);
-        currentDisplay((IDark + IPhoto).toFixed(2));
-        CurD4.push((IDark + IPhoto).toFixed(2))
+        temp = parseFloat(temp) + 0.02
+        table.innerHTML = temp;
+        currentDisplay(temp);
+        CurD4.push(temp)
         voltageDisplay(20)
       }
       break;
@@ -909,9 +918,9 @@ function takeReadings(){
         IPhoto = 0.5*(160/(dis4**2))
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
-        table.innerHTML = (IDark + IPhoto).toFixed(2);
-        currentDisplay((IDark + IPhoto).toFixed(2));
-        CurD4.push((IDark + IPhoto).toFixed(2))
+        table.innerHTML = temp;
+        currentDisplay(temp);
+        CurD4.push(temp)
         voltageDisplay(25)
       }
       break;
@@ -921,9 +930,9 @@ function takeReadings(){
         IPhoto = 0.5*(160/(dis4**2))
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
-        table.innerHTML = (IDark + IPhoto).toFixed(2);
-        currentDisplay((IDark + IPhoto).toFixed(2));
-        CurD4.push((IDark + IPhoto).toFixed(2))
+        table.innerHTML = temp;
+        currentDisplay(temp);
+        CurD4.push(temp)
         voltageDisplay(30)
       }
       break;
@@ -972,34 +981,34 @@ function plotGraph() {
   new Chart(ctx1, {
     type: 'line',
     data: {
-      labels: ['0V', '5V', '10V', '15V', '20V', '25V', '30V', '40V'],
+      labels: ['0 V', '5 V', '10 V', '15 V', '20 V', '25 V', '30 V', '40 V'],
       datasets: [{
         label: 'Current at D1',
         data: CurD1,
         backgroundColor: 'orange',
         borderWidth: 2,
-        tension : 0.6
+        tension : 0.2
       },
       {
         label: 'Current at D2',
         data: CurD2,
         backgroundColor: 'red',
         borderWidth: 2,
-        tension : 0.6
+        tension : 0.2
       },
       {
         label: 'Current at D3',
         data: CurD3,
         backgroundColor: 'green',
         borderWidth: 2,
-        tension : 0.6
+        tension : 0.2
       },
       {
         label: 'Current at D4',
         data: CurD4,
         backgroundColor: 'blue',
         borderWidth: 2,
-        tension : 0.6
+        tension : 0.2
       }
     ]
   },
