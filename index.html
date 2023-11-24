@@ -22,6 +22,7 @@
     <script defer src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script defer type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"> </script>
     <script defer src="js/script.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
       @media (max-width: 600px) {
@@ -87,8 +88,8 @@
             </div>
             <div class="canvas__div">
               <!-- <div id="canvas-container"> -->
-              <canvas id="canvas" width="820" height="500" style="border: 1px solid #fff; border-radius: 7px;"></canvas>
-            </div>
+                <canvas id="canvas" width="820" height="500" style=" display: block; border: 1px solid #fff; border-radius: 7px;"></canvas>
+              </div>
           </div>
           <div id="variables" class="main__task-div">
             <div class="settings-sections">
@@ -198,14 +199,18 @@
             <h3 class="task-title">Graph</h3>
               <div class="settings-sections">
                 <div class="control-sections">
-                  <!-- <p id="p3">Since I1 = I2 + I3<br>Kirchoff's Current Law is verified</p> -->
+                  <div class="canvas__div">
+                    <canvas id="canvas1" width="820" height="500" style=" display: block; border: 1px solid #fff; border-radius: 7px;"></canvas>
+                  </div>
                 </div>
               </div>
           </div>  
           <div id="comments" class="main__task-div">
             <h3 class="task-title">Calcualtions</h3>
               <div class="settings-sections">
-                <div class="control-sections"> </div>
+                <div class="control-sections"> 
+                  <p>Total Current (I <sub>T</sub>) = I <sub>Dark</sub> + I <sub>Photo</sub> <br> I <sub>Dark</sub> = I <sub>saturation</sub> * exp <sup>(e*V/(K*T)-1)</sup> <br> I <sub>Photo</sub> = Responsivity * L / D<sup>2</sup> <br> e = 1.602 * 10 <sup>-19</sup> <br> K = 1.380 * 10 <sup>-23</sup> <br>T = 303.15 K </p>
+                </div>
               </div>
           </div>
           <div id="comments" class="main__task-div">
