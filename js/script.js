@@ -123,6 +123,14 @@ ctx.textBaseline = "middle";
 ctx.fillText("V", 245, 283)
 
 
+function instructionDisplay(inst) {  
+  ctx.fillStyle = "white"
+  ctx.fillRect(5,10,800,30);
+  ctx.fillStyle = "black"
+  ctx.font = "bold 20px Arial";
+  ctx.fillText(inst, 6,25)
+}
+
 function voltageDisplay(volt) {
   ctx.fillStyle = "white";
   ctx.fillRect(170,269,55,30);
@@ -167,6 +175,15 @@ ctx.fillStyle = "black"
 ctx.font = "bold small-caps 20px Arial";
 ctx.textBaseline = "middle";
 ctx.fillText("A", 193, 430)
+
+function currentDisplay(cur) {
+  ctx.fillStyle = "white"
+ctx.fillRect(150,380, 100, 25);
+ctx.fillStyle = "black"
+let text = `${cur} mA`
+ctx.font = "bold 20px Arial";
+ctx.fillText(text, 153,395)  
+}
 
 //negative
 ctx.fillStyle = "black"
@@ -384,6 +401,7 @@ function varinit() {
   $("#changing-text").text("Set Distance");
   $("#message").text("Click on Start Simulation");
 
+  instructionDisplay("Step 1: Click on Start Simulation");
   placeObjectoff(0);
 
 }
@@ -533,6 +551,7 @@ function takeReadings(){
         IDark = checkIDis0(IDark);
         IPhoto = 0.5*(160/(dis1**2))
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD1.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(0)
       }
@@ -544,6 +563,7 @@ function takeReadings(){
         IDark = checkIDis0(IDark);
         IPhoto = 0.5*(160/(dis1**2))
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD1.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(5)
       }
@@ -555,6 +575,7 @@ function takeReadings(){
           IDark = checkIDis0(IDark);
           IPhoto = 0.5*(160/(dis1**2))
           table.innerHTML = (IDark + IPhoto).toFixed(2);
+          currentDisplay((IDark + IPhoto).toFixed(2));
           CurD1.push((IDark + IPhoto).toFixed(2))
           voltageDisplay(10)
       }
@@ -566,6 +587,7 @@ function takeReadings(){
           IDark = checkIDis0(IDark);
           IPhoto = 0.5*(160/(dis1**2))
           table.innerHTML = (IDark + IPhoto).toFixed(2);
+          currentDisplay((IDark + IPhoto).toFixed(2));
           voltageDisplay(15)
           CurD1.push((IDark + IPhoto).toFixed(2))
       }
@@ -577,6 +599,7 @@ function takeReadings(){
               IDark = checkIDis0(IDark);
               IPhoto = 0.5*(160/(dis1**2))
               table.innerHTML = (IDark + IPhoto).toFixed(2);
+              currentDisplay((IDark + IPhoto).toFixed(2));
               voltageDisplay(20)
               CurD1.push((IDark + IPhoto).toFixed(2))
       }
@@ -588,6 +611,7 @@ function takeReadings(){
             IDark = checkIDis0(IDark);
             IPhoto = 0.5*(160/(dis1**2))
             table.innerHTML = (IDark + IPhoto).toFixed(2);
+            currentDisplay((IDark + IPhoto).toFixed(2));
             voltageDisplay(25)
             CurD1.push((IDark + IPhoto).toFixed(2))
       }
@@ -599,6 +623,7 @@ function takeReadings(){
           IDark = checkIDis0(IDark);
           IPhoto = 0.5*(160/(dis1**2))
           table.innerHTML = (IDark + IPhoto).toFixed(2);
+          currentDisplay((IDark + IPhoto).toFixed(2));
           voltageDisplay(30)
           CurD1.push((IDark + IPhoto).toFixed(2))
       }
@@ -610,6 +635,7 @@ function takeReadings(){
     $("#distance2Slider").slider("enable");
     $("#distance2Spinner").spinner("enable"); 
     $("#message").text("Set D2 by varying the slider Distance D2 and Click on take readings");
+    instructionDisplay("Step 3: Set D2 by varying the slider Distance D2 and Click on take readings");
   }
 
   if (count >=8 && count <= 14) {
@@ -623,6 +649,7 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD2.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(0)
       }
@@ -634,6 +661,7 @@ function takeReadings(){
         IDark = checkIDis0(IDark);
         IPhoto = 0.5*(160/(dis2**2))
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD2.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(5)
       }
@@ -645,6 +673,7 @@ function takeReadings(){
         IDark = checkIDis0(IDark);
         IPhoto = 0.5*(160/(dis2**2))
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD2.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(10)
       }
@@ -656,6 +685,7 @@ function takeReadings(){
         IDark = checkIDis0(IDark);
         IPhoto = 0.5*(160/(dis2**2))
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD2.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(15)
       }
@@ -667,6 +697,7 @@ function takeReadings(){
         IDark = checkIDis0(IDark);
         IPhoto = 0.5*(160/(dis2**2))
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD2.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(20)
       }
@@ -678,6 +709,7 @@ function takeReadings(){
         IDark = checkIDis0(IDark);
         IPhoto = 0.5*(160/(dis2**2))
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD2.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(25)
       }
@@ -689,6 +721,7 @@ function takeReadings(){
         IDark = checkIDis0(IDark);
         IPhoto = 0.5*(160/(dis2**2))
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD2.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(30)
       }
@@ -701,6 +734,7 @@ function takeReadings(){
     $("#distance3Slider").slider("enable");
     $("#distance3Spinner").spinner("enable"); 
     $("#message").text("Set D3 by varying the slider Distance D3 and Click on take readings");
+    instructionDisplay("Step 4: Set D3 by varying the slider Distance D3 and Click on take readings")
     alert("Set distance D3 and click on take readings")
   }
   if (count >= 15 && count <= 21) {
@@ -714,6 +748,7 @@ function takeReadings(){
         IDark = checkIDis0(IDark);
         IPhoto = 0.5*(160/(dis3**2))
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD3.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(0)
       }
@@ -725,6 +760,7 @@ function takeReadings(){
         IDark = checkIDis0(IDark);
         IPhoto = 0.5*(160/(dis3**2))
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD3.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(5)
       }
@@ -736,6 +772,7 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD3.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(10)
       }
@@ -747,6 +784,7 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD3.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(15)
       }
@@ -758,6 +796,7 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD3.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(20)
       }
@@ -769,6 +808,7 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD3.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(25)
       }
@@ -780,6 +820,7 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD3.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(30)
       }
@@ -795,6 +836,7 @@ function takeReadings(){
     $("#distance4Slider").slider("enable");
     $("#distance4Spinner").spinner("enable"); 
     $("#message").text("Set D4 by varying the slider Distance D4 and Click on take readings");
+    instructionDisplay("Step 5: Set D4 by varying the slider Distance D4 and Click on take readings")
   }
 
   if (count >= 22 && count <= 28) {
@@ -808,6 +850,7 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD4.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(0)
       }
@@ -819,6 +862,7 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD4.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(5)
       }
@@ -830,6 +874,7 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD4.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(10)
       }
@@ -841,6 +886,7 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD4.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(15)
       }
@@ -852,6 +898,7 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD4.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(20)
       }
@@ -863,6 +910,7 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD4.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(25)
       }
@@ -874,6 +922,7 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         table.innerHTML = (IDark + IPhoto).toFixed(2);
+        currentDisplay((IDark + IPhoto).toFixed(2));
         CurD4.push((IDark + IPhoto).toFixed(2))
         voltageDisplay(30)
       }
@@ -883,6 +932,7 @@ function takeReadings(){
   if(count >= 28){
     alert("Click on Plot graph to see the I-V characteristics")
     $("#message").text("Click on Plot Graph to view the graph");
+    instructionDisplay("Step 6: Click on Plot Graph to view the graph")
     $("#take-readings").prop("disabled", true);
     $("#plot-graph-btn").prop("disabled", false);
   }
@@ -902,6 +952,7 @@ function startSimulation() {
   $("#distance1Spinner").spinner("enable");
   $("#changing-text").text("Set Distance D1");
   $("#message").text("Set D1 by varying the slider Distance D1 and Click on take readings");
+  instructionDisplay("Step 2: Set D1 by varying the slider Distance D1 and Click on take readings")
 }
 
 
@@ -913,6 +964,8 @@ function checkIDis0(cur) {
 }
 
 function plotGraph() {
+  instructionDisplay("Step 7: Click on result button to view the result")
+  $("#message").text("Click on result button to view the result");
   document.getElementById('result-display-div').style.display = 'block'   
   
   const ctx1 = document.getElementById('canvas1');
