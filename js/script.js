@@ -700,8 +700,8 @@ function takeReadings(){
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
         IPhoto = 0.5*(160/(dis2**2))
-        table.innerHTML = parseFloat(temp) + 0.02;
-        temp = parseFloat(temp) + 0.02
+        table.innerHTML = (parseFloat(temp) + 0.02).toFixed(2);
+        temp = (parseFloat(temp) + 0.02).toFixed(2)
         currentDisplay(temp);
         CurD2.push(temp)
         voltageDisplay(20)
@@ -801,7 +801,7 @@ function takeReadings(){
         IPhoto = 0.5*(160/(dis3**2))
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
-        temp = parseFloat(temp) + 0.02
+        temp = (parseFloat(temp) + 0.02).toFixed(2)
         table.innerHTML = temp
         currentDisplay(temp);
         CurD3.push(temp)
@@ -905,7 +905,7 @@ function takeReadings(){
         IPhoto = 0.5*(160/(dis4**2))
         IDark = parseInt(IDark);
         IDark = checkIDis0(IDark);
-        temp = parseFloat(temp) + 0.02
+        temp = (parseFloat(temp) + 0.02).toFixed(2)
         table.innerHTML = temp;
         currentDisplay(temp);
         CurD4.push(temp)
