@@ -127,7 +127,7 @@ function instructionDisplay(inst) {
   ctx.fillStyle = "white"
   ctx.fillRect(5,10,800,30);
   ctx.fillStyle = "black"
-  ctx.font = "bold 20px Arial";
+  ctx.font = "22px Arial";
   ctx.fillText(inst, 6,25)
 }
 
