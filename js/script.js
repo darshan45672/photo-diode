@@ -1015,7 +1015,17 @@ function plotGraph() {
   options: {
     scales: {
       y: {
-        beginAtZero: true
+        beginAtZero: true,
+        title: {
+          display: true,
+          text: 'Photo Current (mA)'
+        }
+      },
+      x:{
+        title:{
+          display: true,
+          text: 'Voltage across Photo Diode (V)'
+        }
       }
     }
   }
