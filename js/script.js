@@ -832,7 +832,6 @@ function takeReadings(){
         voltageDisplay(30)
       }
       break;
-
       default:
         break;
     }
@@ -845,7 +844,6 @@ function takeReadings(){
     $("#message").text("Set D4 by varying the slider Distance D4 and Click on take readings");
     instructionDisplay("Step 5: Set D4 by varying the slider Distance D4 and Click on take readings")
   }
-
   if (count >= 22 && count <= 28) {
     switch(count){
       case 22:{
@@ -945,7 +943,6 @@ function takeReadings(){
     $("#take-readings").prop("disabled", true);
     $("#plot-graph-btn").prop("disabled", false);
   }
-
 }
 
 function startSimulation() {
@@ -1030,7 +1027,6 @@ function plotGraph() {
     }
   }
 });
-
 }
 
 function showResult() {
