@@ -268,7 +268,7 @@ placeObjectoff(ctx, 394, 273, 14);
 
 function placeObject(distance) {
  
-  ctx.clearRect(340, 0, canvas.width, canvas.height);
+  ctx.clearRect(340, 35, canvas.width, canvas.height);
 
   var startX =400; // X-coordinate of the starting point
   var startY = canvas.height / 1.65; // Y-coordinate of the starting point
@@ -515,6 +515,7 @@ function varupdate() {
   $("#distance2Spinner").spinner("value", $("#distance2Slider").slider("value"));
   $("#distance3Spinner").spinner("value", $("#distance3Slider").slider("value"));
   $("#distance4Spinner").spinner("value", $("#distance4Slider").slider("value"));
+
   d1 = $("#distance1Spinner").spinner("value"); //Updating variables
   d2 = $("#distance2Spinner").spinner("value");
   d3 = $("#distance3Spinner").spinner("value");
